@@ -28,3 +28,5 @@ One thing that I would like to have is the ability to use different sets of
 sounds and pitches. This will have the effect of creating different 
 tonalities and melodies, resulting in a simple form of algorithmic 
 melodic composition.
+
+Colors of pads where chosen to imitate old plastic.

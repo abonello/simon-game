@@ -1,3 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Squada+One');
+
 body {
-    background-color: red;
+    background-color: #c88353;
+}
+
+.container {
+    margin: 0 auto; /* center */
+    text-align: center;
+}
+
+.simonGame {
+    margin: 0 auto; /* center */
+    width: 600px;
+    height: 600px;
+    margin-top: 70px;
+    border: 5px solid #6b5656;
+    border-radius: 50%;
+    /*position: relative;*/
+}
+
+.pad { /* address all pads */
+    margin: 0;
+    float: left;
+    /*position: relative;*/
+    border: 3px solid #4e3c3c;
+    width: 294px;
+    height: 294px;
+}
+
+.green {
+    background-color: #45a445;
+    border-radius: 100% 0 0 0;
+}
+
+.red {
+    background-color: #dc4040;
+    border-radius: 0 100% 0 0;
+}
+
+.yellow {
+    background-color: #cbbb44;
+    border-radius: 0 0 0 100%;
+}
+
+.blue {
+    background-color: #5485de;
+    border-radius: 0 0 100% 0;
+}
+
+.controls {
+    width: 220px;
+    height: 220px;
+    border: 3px solid #e8e8e8;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 5;
+    margin-top: 187px;
+    margin-left: 187px;
+    background-color: #dcdcdc;
+    box-shadow: 0 0 10px white;
+}
+
+.title {
+    font-family: "Squada One", Arial;
+    font-size: 55px;
+    letter-spacing: 3px;
+    margin-top: 25px;
+    margin-bottom: 5px;
+    text-shadow: 0 0 5px #5e5454;
+}
+
+.inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.level,
+.soundSet{
+    width: 60px;
+    height: 50px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    line-height: 50px;
+    font-family: "Squada One", Arial;
+    font-size: 40px;
+    background-color: #464545;
+    color: #bdffe8;
+    box-shadow: 0 0 8px #c8fdeb;
+}
+
+.start, 
+.end {
+    margin: 0;
+    margin-left: 5px;
+    text-align: center;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #a8a8a8;
+    border-radius: 50%;
+    font-size: 15px;
+    line-height: 55px;
+    box-shadow: 0 0 3px #a8a8a8;
+}
+
+.start {
+    background-color: #ff6123;
+}
+
+.end {
+    background-color: #3f6df3;
+}
+
+.sound {
+    padding-top: 10px;
+}
+
+.soundDecrease,
+.soundIncrease {
+    font-family: "Squada One", Arial;
+    font-size: 20px;
+    border: 1px solid #625e5e;
+    padding: 0 3px 0 3px;
+    background-color: #625e5e;
+    color: #e8ecca;
+    text-shadow: 0 0 5px #e8ecca;
+}
+
+.soundDecrease {
+    border-radius: 40% 0 0 40%;
+}
+
+.soundIncrease {
+    border-radius: 0 40% 40% 0;
 }
