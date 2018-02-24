@@ -21,3 +21,10 @@ With regards to the logic I will use **jQuery** and will test using **jasmine**.
 I might use **Bootstrap**, but I have not made a final decision on this yet.
 
 Version control will be taken care of by using **git** and **GitHub**.
+
+## Layout of the game
+The overall layout of the game will resemble the original physical game.  
+One thing that I would like to have is the ability to use different sets of 
+sounds and pitches. This will have the effect of creating different 
+tonalities and melodies, resulting in a simple form of algorithmic 
+melodic composition.
