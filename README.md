@@ -116,6 +116,11 @@ function giveMeRandomNumber(){
     var randomNum = Math.floor(Math.random() * 4);
     //add generated number to the gameList array.
     gameList.push(randomNum);
+    
+    
+    //Test -display last generated number in the sound display
+    //$(".soundSet").text(randomNum);
+    //console.log(gameList);
 
 }
 ~~~~
