@@ -30,3 +30,66 @@ tonalities and melodies, resulting in a simple form of algorithmic
 melodic composition.
 
 Colors of pads where chosen to imitate old plastic.
+
+
+## Logic
+
+1. Once the user starts game, the board starts a list sequence
+2. user replicates the sequence
+3. If correct board adds another item to the list sequence -- Go to step 2
+4. If wrong an error sound and the game stops
+
+Features:
+* When a pad is played by the computer or the user, the pad lights up and a sound is emitted
+* I want to be able to use different sets of sounds
+* I will start with pre-recorded sounds but later I want to syntehsise the sound in real time
+* I want to be able to keep track of best scores, at least for the session.
+
+
+## Code
+The code starts when the document is ready
+* Main function of the program:
+~~~~javascript
+$(document).ready(function() {
+});
+~~~~
+
+Inside the main function I need an event listener to target the start button.
+
+~~~~javascript
+$(".start").click(function(){
+    level++;
+    doGameList();
+ 
+});
+~~~~
+
+This should trigger a function that will . . . . 
+~~~~javascript
+function doGameList(){
+    //display the level
+    $(".level").text(level);
+    //generate random number and add it to gameList
+    
+ 
+});
+~~~~
+
+I will need a few global variables that I will place at the very top of the file
+~~~~javascript
+userList = [];  // holds the user input
+gameList = [];  // holds the computer randomly-generated list
+var pad, level = 0, sound = 1;
+// Sounds
+var gameSounds = []; // I need to find some sources
+// Later on I will have more than one set of sounds which can be selected by the user.
+// At a later stage I will just store parameter values to create sounds in real time.
+~~~~
+
+~~~~javascript
+//generate random number
+function giveMeRandomNumber(){
+    var random = Math.floor(Math.random() * 4); 
+
+});
+~~~~
