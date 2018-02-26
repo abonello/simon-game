@@ -33,6 +33,7 @@ Colors of pads where chosen to imitate old plastic.
 
 
 ## Logic
+Remember to link to jQuery CDN.
 
 1. Once the user starts game, the board starts a list sequence
 2. user replicates the sequence
@@ -70,9 +71,9 @@ function doGameList(){
     //display the level
     $(".level").text(level);
     //generate random number and add it to gameList
-    
+    giveMeRandomNumber();
  
-});
+}
 ~~~~
 
 I will need a few global variables that I will place at the very top of the file
@@ -87,9 +88,34 @@ var gameSounds = []; // I need to find some sources
 ~~~~
 
 ~~~~javascript
+//TESTING 1
+$(document).ready(function() {
+    var random = Math.random();
+    console.log(random);
+    console.log(random * 4);
+    console.log(Math.floor(random * 4));
+    //gives output 0, 1, 2, 3
+});
+~~~~
+~~~~javascript
+//TESTING 2
+var random;
+var anArray = [];
+$(document).ready(function() {
+    // build list of 10 random numbers
+    for (var i = 0; i < 100; i++) {
+        random = Math.random();
+        anArray.push(Math.floor(random * 4));
+    }
+    console.log(anArray);
+});
+~~~~
+~~~~javascript
 //generate random number
 function giveMeRandomNumber(){
-    var random = Math.floor(Math.random() * 4); 
+    var randomNum = Math.floor(Math.random() * 4);
+    //add generated number to the gameList array.
+    gameList.push(randomNum);
 
-});
+}
 ~~~~
