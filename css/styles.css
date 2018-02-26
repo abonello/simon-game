@@ -33,8 +33,18 @@ body {
     border-radius: 100% 0 0 0;
 }
 
+.lightgreen {
+    background-color: #75d475;
+    border-radius: 100% 0 0 0;
+}
+
 .red {
     background-color: #dc4040;
+    border-radius: 0 100% 0 0;
+}
+
+.lightred {
+    background-color: #ff7070;
     border-radius: 0 100% 0 0;
 }
 
@@ -43,8 +53,18 @@ body {
     border-radius: 0 0 0 100%;
 }
 
+.lightyellow {
+    background-color: #fbeb74;
+    border-radius: 0 0 0 100%;
+}
+
 .blue {
     background-color: #5485de;
+    border-radius: 0 0 100% 0;
+}
+
+.lightblue {
+    background-color: #84b5ff;
     border-radius: 0 0 100% 0;
 }
 

@@ -124,3 +124,74 @@ function giveMeRandomNumber(){
 
 }
 ~~~~
+
+After testing the increments of level, the random generation of numbers
+and the building of the gameList Array, I need to make sure that I can 
+change the color of the selected pad for a set time and revert back to
+the original color. I will also need to think about the sounds.
+
+I need to identify the pads. I will use IDs pad1, pad2, pad3, pad4.
+I will add a class with a lighter color for the selected pad and remove 
+the original class, then after a set time (use setInterval function), I 
+will remove the lighter class and reset the original class.  
+
+The following code will turn pad one to light green and back again after
+700ms.
+~~~~javascript
+// set lighter color class for pad
+    $("#pad1").addClass("lightgreen").removeClass("green");
+    // reset color for pad
+    setInterval(function() {
+        $("#pad1").addClass("green").removeClass("lightgreen");
+    }, 700); // Do this after 700ms
+~~~~
+
+Now I need to dynamically select the pad depending on the last generated
+number.
+~~~~javascript
+padId = gameList[gameList.length - 1];
+console.log("#pad"+padId);
+~~~~
+
+I renumbered the pads to pad0, pad1, pad2, pad3. This will avoid having to 
+do the maths in the code.
+I will switch case statements to select which set of classes need to be changed.
+
+~~~~javascript
+switch(gameList[gameList.length - 1]) {
+    case 0:
+        // set lighter color class for pad
+        $("#pad0").addClass("lightgreen").removeClass("green");
+        // reset color for pad
+        setInterval(function() {
+            $("#pad0").addClass("green").removeClass("lightgreen");
+        }, 700); // Do this after 700ms
+        break;
+    case 1:
+        // set lighter color class for pad
+        $("#pad1").addClass("lightred").removeClass("red");
+        // reset color for pad
+        setInterval(function() {
+            $("#pad1").addClass("red").removeClass("lightred");
+        }, 700); // Do this after 700ms
+        break;
+    case 2:
+        // set lighter color class for pad
+        $("#pad2").addClass("lightyellow").removeClass("yellow");
+        // reset color for pad
+        setInterval(function() {
+            $("#pad2").addClass("yellow").removeClass("lightyellow");
+        }, 700); // Do this after 700ms
+        break;
+    case 3:
+        // set lighter color class for pad
+        $("#pad3").addClass("lightblue").removeClass("blue");
+        // reset color for pad
+        setInterval(function() {
+            $("#pad3").addClass("blue").removeClass("lightblue");
+        }, 700); // Do this after 700ms
+        break;
+    default:
+        console.log("Nothing to do.")
+    }
+~~~~
