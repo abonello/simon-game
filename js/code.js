@@ -1,5 +1,6 @@
 var gameList = [];
-var padId = 0, level = 0;
+var padId = 0, color, level = 0;
+var delayTime = 700; // ms to wait before switching back to normal pad color.
 $(document).ready(function() {
     $(".start").click(function(){
         level++;
@@ -15,42 +16,18 @@ function doGameList(){
     padId = gameList[gameList.length - 1];
     console.log("#pad"+padId);
     
-    switch(gameList[gameList.length - 1]) {
-    case 0:
-        // set lighter color class for pad
-        $("#pad0").addClass("lightgreen").removeClass("green");
-        // reset color for pad
-        setInterval(function() {
-            $("#pad0").addClass("green").removeClass("lightgreen");
-        }, 700); // Do this after 700ms
-        break;
-    case 1:
-        // set lighter color class for pad
-        $("#pad1").addClass("lightred").removeClass("red");
-        // reset color for pad
-        setInterval(function() {
-            $("#pad1").addClass("red").removeClass("lightred");
-        }, 700); // Do this after 700ms
-        break;
-    case 2:
-        // set lighter color class for pad
-        $("#pad2").addClass("lightyellow").removeClass("yellow");
-        // reset color for pad
-        setInterval(function() {
-            $("#pad2").addClass("yellow").removeClass("lightyellow");
-        }, 700); // Do this after 700ms
-        break;
-    case 3:
-        // set lighter color class for pad
-        $("#pad3").addClass("lightblue").removeClass("blue");
-        // reset color for pad
-        setInterval(function() {
-            $("#pad3").addClass("blue").removeClass("lightblue");
-        }, 700); // Do this after 700ms
-        break;
-    default:
-        console.log("Nothing to do.")
-    } 
+    // get the color
+    color = $("#pad"+padId).attr("class").split(" ")[1];
+    console.log("#pad"+padId+" : "+color);
+    
+    // set lighter color class for pad
+    $("#pad"+padId).addClass("light"+color).removeClass(color);
+    // reset color for pad
+    setInterval(function() {
+        $("#pad"+padId).addClass(color).removeClass("light"+color);
+    }, delayTime); // Do this after time set by delayTime.
+    
+
 
     
 }

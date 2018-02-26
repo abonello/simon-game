@@ -193,5 +193,24 @@ switch(gameList[gameList.length - 1]) {
         break;
     default:
         console.log("Nothing to do.")
-    }
+}
 ~~~~
+
+I can replace the above switch if I can automatically extract the color 
+which is the same as the class of the pad.
+
+~~~~javascript
+// get the color
+color = $("#pad"+padId).attr("class").split(" ")[1];
+console.log("#pad"+padId+" : "+color);
+
+// set lighter color class for pad
+$("#pad"+padId).addClass("light"+color).removeClass(color);
+// reset color for pad
+setInterval(function() {
+    $("#pad"+padId).addClass(color).removeClass("light"+color);
+}, delayTime); // Do this after time set by delayTime.
+~~~~
+
+Now I need to loop throught the array and do the above for each number
+stored in the gameList array.
