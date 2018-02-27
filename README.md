@@ -2,7 +2,7 @@
  ## Milestone Project 
  
  ### This project is published as a GitHub page
- <a href="https://abonello.github.io/simon-game/" target="_blank">Simon Game</a>
+ [Simon Game](https://abonello.github.io/simon-game/)
  
  ### Create a Memory Game
 
@@ -281,3 +281,8 @@ Before proceeding to making the comparison between the computer list
 and the user list, I want to be publish the page on GitHub Pages.
 I will add a link to the repository on the index page and a link to
 the GitHub Page at the top of this README.md.
+
+I am trying to add target="_blank" but it does not work. I read that 
+I can use plain HTML but it does not seem to work either. I will revert
+to markdown.
+
