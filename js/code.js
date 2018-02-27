@@ -1,6 +1,12 @@
 var gameList = [];
 var padId = 0, color, level = 0;
 var delayTime = 700; // ms to wait before switching back to normal pad color.
+var soundSet = [
+    "assets/A1.mp3",
+    "assets/C1.mp3",
+    "assets/E1.mp3",
+    "assets/A2.mp3"
+    ]
 $(document).ready(function() {
     $(".start").click(function(){
         level++;
@@ -45,7 +51,7 @@ function padAction(ndx, padId, color) {
         
     // set lighter color class for pad
     $("#pad"+padId).addClass("light"+color).removeClass(color);
-    // playSound(padId);
+    playSound(padId);
     // reset color for pad
     setTimeout(function() {
         $("#pad"+padId).addClass(color).removeClass("light"+color);
@@ -53,6 +59,5 @@ function padAction(ndx, padId, color) {
 }
 
 function playSound(padId) {
-    
-    
+    $.playSound(soundSet[padId]);
 }

@@ -22,3 +22,10 @@
 //     console.log(anArray);
 // });
 //END TESTING 2
+
+//TESTING 3
+$(document).ready(function() {
+    var test="pad1";
+    console.log(test.slice(3,4));
+});
+//END TESTING 3
