@@ -13,12 +13,12 @@ function doGameList(){
     $(".level").text(level);
     //generate random number and add it to gameList
     giveMeRandomNumber();
-    var x = 0;
+    var ndx = 0;
     var sequence = setInterval(function() {
-        padAction(x, padId, color);
-        x++;
-        if (x >= gameList.length) {
-            x = 0;
+        padAction(ndx, padId, color);
+        ndx++;
+        if (ndx >= gameList.length) {
+            ndx = 0;
             clearInterval(sequence);
         }
     }, 1000);
@@ -37,11 +37,11 @@ function giveMeRandomNumber(){
 }
 
 
-function padAction(x, padId, color) {
-    padId = gameList[x];
+function padAction(ndx, padId, color) {
+    padId = gameList[ndx];
         color = $("#pad"+padId).attr("class").split(" ")[1];
-        console.log(gameList[x]);
-        console.log("#pad"+padId+" : "+color);
+        // console.log(gameList[ndx]);
+        // console.log("#pad"+padId+" : "+color);
         
     // set lighter color class for pad
     $("#pad"+padId).addClass("light"+color).removeClass(color);
@@ -53,5 +53,6 @@ function padAction(x, padId, color) {
 }
 
 function playSound(padId) {
+    
     
 }
