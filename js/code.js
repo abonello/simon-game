@@ -1,4 +1,5 @@
 var gameList = [];
+var userList = [];
 var padId = 0, color, level = 0;
 var delayTime = 700; // ms to wait before switching back to normal pad color.
 var soundSet = [
@@ -12,9 +13,20 @@ $(document).ready(function() {
         level++;
         doGameList();
     });
+    
+    // User List input
+    $(".pad").click(function(){
+        var id = $(this).attr("id").slice(3,4);
+        console.log(id);
+        userList.push(id);
+        console.log(userList);
+        userAction(id);
+    });
 });
 
 function doGameList(){
+    // clear userList
+    userList = [];
     //display the level
     $(".level").text(level);
     //generate random number and add it to gameList
@@ -42,12 +54,23 @@ function giveMeRandomNumber(){
     // console.log(gameList);
 }
 
+function userAction(id, color) {
+    color = $("#pad"+id).attr("class").split(" ")[1];
+    // set lighter color class for pad
+    $("#pad"+id).addClass("light"+color).removeClass(color);
+    playSound(id);
+    // reset color for pad
+    setTimeout(function() {
+        $("#pad"+id).addClass(color).removeClass("light"+color);
+    }, delayTime); // Do this after time set by delayTime.
+}
+
 
 function padAction(ndx, padId, color) {
     padId = gameList[ndx];
-        color = $("#pad"+padId).attr("class").split(" ")[1];
-        // console.log(gameList[ndx]);
-        // console.log("#pad"+padId+" : "+color);
+    color = $("#pad"+padId).attr("class").split(" ")[1];
+    // console.log(gameList[ndx]);
+    // console.log("#pad"+padId+" : "+color);
         
     // set lighter color class for pad
     $("#pad"+padId).addClass("light"+color).removeClass(color);

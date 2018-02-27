@@ -237,3 +237,41 @@ function playSound(padId) {
     $.playSound(soundSet[padId]);
 }
 ~~~~
+
+Next step is to work on the user input of a sequence to match.
+
+I need an array to hold the user's list:
+~~~~javascript
+var userList = [];
+~~~~
+
+A listener is created in the document.ready function
+~~~~javascript
+// User List input
+$(".pad").click(function(){
+    var id = $(this).attr("id").slice(3,4);
+    console.log(id);
+    userList.push(id);
+    console.log(userList);
+    userAction(id);
+});
+~~~~
+The console.log lines are for testing purposes. They will be removed later.
+This triggers a userAction function:
+~~~~javascript
+function userAction(id, color) {
+    color = $("#pad"+id).attr("class").split(" ")[1];
+    // set lighter color class for pad
+    $("#pad"+id).addClass("light"+color).removeClass(color);
+    playSound(id);
+    // reset color for pad
+    setTimeout(function() {
+        $("#pad"+id).addClass(color).removeClass("light"+color);
+    }, delayTime); // Do this after time set by delayTime.
+}
+~~~~
+Notice that the same playSound function is used.
+Later I will see if I can refactor the userAction function and the 
+padAction function.
+
+
