@@ -216,3 +216,24 @@ Now I need to loop throught the array and do the above for each number
 stored in the gameList array.
 
 I had a few issues with refactoring but now it is working.
+
+#Sounds
+I added four temporary sounds and got them to play with their respective pad.
+~~~~javascript
+var soundSet = [
+    "assets/A1.mp3",
+    "assets/C1.mp3",
+    "assets/E1.mp3",
+    "assets/A2.mp3"
+    ]
+
+function padAction(ndx, padId, color) {
+    . . . .
+    playSound(padId);
+    . . . .
+}
+
+function playSound(padId) {
+    $.playSound(soundSet[padId]);
+}
+~~~~
