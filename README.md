@@ -2,7 +2,7 @@
  ## Milestone Project 
  
  ### This project is published as a GitHub page
- [Simon Game](https://abonello.github.io/simon-game/)
+ <a href="https://abonello.github.io/simon-game/" target="_blank">Simon Game</a>
  
  ### Create a Memory Game
 
