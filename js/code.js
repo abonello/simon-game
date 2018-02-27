@@ -118,8 +118,9 @@ function playSound(padId) {
 function errorDisplay() {
     userList = [];
     gameList = [];
-    level=0;
     $(".level").text("Err");
+    $(".soundSet").text(level - 1);
+    level=0;
     // All Pads Light Up
     console.log("Change Collors");
     $("#pad0").addClass("lightgreen").removeClass("green");
