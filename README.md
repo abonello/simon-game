@@ -214,3 +214,5 @@ setInterval(function() {
 
 Now I need to loop throught the array and do the above for each number
 stored in the gameList array.
+
+I had a few issues with refactoring but now it is working.
