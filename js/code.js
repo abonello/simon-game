@@ -110,7 +110,9 @@ function padAction(ndx, padId, color) {
 }
 
 function playSound(padId) {
-    $.playSound(soundSet[padId]);
+    // $.playSound(soundSet[padId]);
+    var sound = new Audio(soundSet[padId]);
+    sound.play();
 }
 
 function errorDisplay() {
