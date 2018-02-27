@@ -379,3 +379,5 @@ function errorDisplay() {
 ~~~~
 
 I will clean out the console.logs.
+After Commit before removing console.logs, the page is not wroking on GitHub Pages.
+It might need some time to update. I will recommit.
