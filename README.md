@@ -1,6 +1,9 @@
  # Interactive Frontend Development
  ## Milestone Project 
  
+ ### This project is published as a GitHub page
+ [Simon Game](https://abonello.github.io/simon-game/)
+ 
  ### Create a Memory Game
 
 Build a simple single-player memory game inspired by Simon. Check out this 
@@ -274,4 +277,7 @@ Notice that the same playSound function is used.
 Later I will see if I can refactor the userAction function and the 
 padAction function.
 
-
+Before proceeding to making the comparison between the computer list
+and the user list, I want to be publish the page on GitHub Pages.
+I will add a link to the repository on the index page and a link to
+the GitHub Page at the top of this README.md.

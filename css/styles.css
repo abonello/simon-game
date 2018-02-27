@@ -3,6 +3,22 @@
 body {
     background-color: #c88353;
 }
+h1 {
+    font-family: "Squada One", Arial;
+    font-size: 70px;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    width: 400px;
+    text-shadow: 0 0 5px #5e5454;
+}
+p {
+    font-family: "Squada One", Arial;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin: 0 auto;
+    width: 600px;
+    text-shadow: 0 0 5px #5e5454;
+}
 
 .container {
     margin: 0 auto; /* center */
@@ -13,7 +29,7 @@ body {
     margin: 0 auto; /* center */
     width: 600px;
     height: 600px;
-    margin-top: 70px;
+    margin-top: 50px;
     border: 5px solid #6b5656;
     border-radius: 50%;
     /*position: relative;*/
