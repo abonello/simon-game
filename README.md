@@ -2,7 +2,8 @@
  ## Milestone Project 
  
  ### This project is published as a GitHub page
- [Simon Game](https://abonello.github.io/simon-game/)
+ [Simon Game](https://abonello.github.io/simon-game/) -- **Right-Click** and
+ select **Open in New Tab**.
  
  ### Create a Memory Game
 
