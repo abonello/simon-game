@@ -17,9 +17,7 @@ $(document).ready(function() {
     // User List input
     $(".pad").click(function(){
         var id = $(this).attr("id").slice(3,4);
-        console.log(id);
         userList.push(id);
-        console.log(userList);
         userAction(id);
     });
 });
@@ -68,9 +66,7 @@ function checkLevelSpeed() {
             delayTime = 700;
             $(".title").removeClass("titleColor1").removeClass("titleColor2").removeClass("titleColor3");
     }
-    console.log("Delay Time: " +delayTime);
 }
-    
 
 //generate random number
 function giveMeRandomNumber(){
@@ -80,7 +76,6 @@ function giveMeRandomNumber(){
     
     //Test -display last generated number in the sound display
     $(".soundSet").text(randomNum);
-    // console.log(gameList);
 }
 
 function userAction(id, color) {
@@ -95,14 +90,12 @@ function userAction(id, color) {
         }, delayTime); // Do this after time set by delayTime.
         checkIfEndOfList();
     } else {
-        console.log("ERROR: End of Game");
         errorDisplay();
     }
 }
 
 function checkForError(id) {
     var lastUserInputNdx = userList.length - 1;
-    console.log(lastUserInputNdx);
     if (userList[lastUserInputNdx] == gameList[lastUserInputNdx]) {
         return (1>0); // return True
     } else {
@@ -112,21 +105,16 @@ function checkForError(id) {
 
 function checkIfEndOfList() {
     if (userList.length == gameList.length) {
-        console.log("End of List: Press Start again");
         setTimeout(function() {
             level++;
             doGameList();
         },1000); //Delay before starting the computer List
-    } else {
-        console.log("Next Input");
     }
 }
 
 function padAction(ndx, padId, color) {
     padId = gameList[ndx];
     color = $("#pad"+padId).attr("class").split(" ")[1];
-    // console.log(gameList[ndx]);
-    // console.log("#pad"+padId+" : "+color);
         
     // set lighter color class for pad
     $("#pad"+padId).addClass("light"+color).removeClass(color);
@@ -151,27 +139,24 @@ function errorDisplay() {
     $(".soundSet").text(level - 1);
     level=0;
     // All Pads Light Up
-    console.log("Change Collors");
     $("#pad0").addClass("lightgreen").removeClass("green");
     $("#pad1").addClass("lightred").removeClass("red");
     $("#pad2").addClass("lightyellow").removeClass("yellow");
     $("#pad3").addClass("lightblue").removeClass("blue");
-    console.log("Play 1 notes");
+    // End Sound Sequence
     playSound(0);
     setTimeout(function() {
-        console.log("Play 2 notes");
         playSound(1);
         playSound(2);
     }, 500);
     setTimeout(function() {
-        console.log("Play All notes");
         playSound(0);
         playSound(1);
         playSound(2);
         playSound(3);
     }, 1500);
     setTimeout(function() {
-        console.log("Revert the colors");
+        // Revert the colors
         $("#pad0").addClass("green").removeClass("lightgreen");
         $("#pad1").addClass("red").removeClass("lightred");
         $("#pad2").addClass("yellow").removeClass("lightyellow");

@@ -440,3 +440,9 @@ function checkLevelSpeed() {
     console.log("Delay Time: " +delayTime);
 }
 ~~~~
+
+**Removed all console.logs**
+
+### Different sets of sounds
+
+Next is to add another set of sounds and a way to select which of the sets to use
