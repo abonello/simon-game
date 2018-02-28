@@ -3,8 +3,8 @@ var userList = [];
 var padId = 0, color, level = 0;
 var delayTime = 700; // ms to wait before switching back to normal pad color.
 var whichSound = 1;
-var maxSound = 2;
-var soundSet = [
+var maxSound = 3;
+var soundSet1 = [
     "assets/A1.mp3",
     "assets/C1.mp3",
     "assets/E1.mp3",
@@ -136,8 +136,8 @@ function padAction(ndx, padId, color) {
 }
 
 function playSound(padId) {
-    // $.playSound(soundSet[padId]);
-    var sound = new Audio(soundSet[padId]);
+    // $.playSound(soundSet1[padId]);
+    var sound = new Audio(soundSet1[padId]);
     sound.play();
 }
 
@@ -146,7 +146,7 @@ function errorDisplay() {
     gameList = [];
     delayTime = 700; // I do not think I need this
     $(".level").text("Err");
-    $(".soundSet").text(level - 1);
+    $(".soundSet").text("--");
     level=0;
     // All Pads Light Up
     $("#pad0").addClass("lightgreen").removeClass("green");
@@ -176,7 +176,6 @@ function errorDisplay() {
 
 function checkWhichButton(btn) {
     var button = $(btn).attr("class").split(" ")[1];
-    console.log(button + " was pressed.");
     if (button == "soundDecrease") {
         whichSound -= 1;
         if (whichSound < 1) {
@@ -189,5 +188,4 @@ function checkWhichButton(btn) {
             whichSound = maxSound;
         }
     }
-    console.log("Current Sound Set: " + whichSound);
 }
