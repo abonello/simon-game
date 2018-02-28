@@ -2,6 +2,8 @@ var gameList = [];
 var userList = [];
 var padId = 0, color, level = 0;
 var delayTime = 700; // ms to wait before switching back to normal pad color.
+var whichSound = 1;
+var maxSound = 2;
 var soundSet = [
     "assets/A1.mp3",
     "assets/C1.mp3",
@@ -9,6 +11,7 @@ var soundSet = [
     "assets/A2.mp3"
     ]
 $(document).ready(function() {
+    $(".soundSet").text(whichSound);
     $(".start").click(function(){
         level++;
         doGameList();
@@ -19,6 +22,13 @@ $(document).ready(function() {
         var id = $(this).attr("id").slice(3,4);
         userList.push(id);
         userAction(id);
+    });
+    
+    //User select set of sound
+    $(".btn").click(function(){
+        console.log("A button was pressed.");
+        checkWhichButton(this);
+        $(".soundSet").text(whichSound);
     });
 });
 
@@ -75,7 +85,7 @@ function giveMeRandomNumber(){
     gameList.push(randomNum);
     
     //Test -display last generated number in the sound display
-    $(".soundSet").text(randomNum);
+    // $(".soundSet").text(randomNum);
 }
 
 function userAction(id, color) {
@@ -162,4 +172,22 @@ function errorDisplay() {
         $("#pad2").addClass("yellow").removeClass("lightyellow");
         $("#pad3").addClass("blue").removeClass("lightblue");
     }, 2300);
+}
+
+function checkWhichButton(btn) {
+    var button = $(btn).attr("class").split(" ")[1];
+    console.log(button + " was pressed.");
+    if (button == "soundDecrease") {
+        whichSound -= 1;
+        if (whichSound < 1) {
+            whichSound = 1;
+        }
+    }
+    if (button == "soundIncrease") {
+        whichSound += 1;
+        if (whichSound > maxSound) {
+            whichSound = maxSound;
+        }
+    }
+    console.log("Current Sound Set: " + whichSound);
 }
