@@ -5,11 +5,18 @@ var delayTime = 700; // ms to wait before switching back to normal pad color.
 var whichSound = 1;
 var maxSound = 3;
 var soundSet1 = [
-    "assets/A1.mp3",
-    "assets/C1.mp3",
-    "assets/E1.mp3",
-    "assets/A2.mp3"
+    "assets/set1/A1.mp3",
+    "assets/set1/C1.mp3",
+    "assets/set1/E1.mp3",
+    "assets/set1/A2.mp3"
     ]
+var soundSet2 = [
+    "assets/set2/D1.mp3",
+    "assets/set2/G1.mp3",
+    "assets/set2/A1.mp3",
+    "assets/set2/C2.mp3"
+    ]
+    
 $(document).ready(function() {
     $(".start").click(function(){
         $(".soundSet").text(whichSound);
