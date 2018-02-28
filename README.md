@@ -454,3 +454,14 @@ end of the game and play the Error function. This button is not strictly necessa
 for the game because the user can easily just play a wrong pad but I wanted to 
 implement it just the same to give an elegant way to abort even while the computer
 may be playing a long list of pads.
+
+End button implemented
+~~~~javascript
+// End Button
+    $(".end").click(function() {
+        errorDisplay();
+    });
+~~~~
+
+There is a bug in line 140 when called from line 58. When the End button interrupts 
+this, there is nothing to split. I will need to do a try and catch.
