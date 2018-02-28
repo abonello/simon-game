@@ -381,3 +381,62 @@ function errorDisplay() {
 I will clean out the console.logs.
 After Commit before removing console.logs, the page is not wroking on GitHub Pages.
 It might need some time to update. I will recommit.
+
+I am speeding up the game when the level goes up:
+~~~~javascript
+function checkLevelSpeed() {
+    switch (true) {
+        case (level >= 30):
+            delayTime = 350;
+            break;
+        case (level >= 20):
+            delayTime = 400;
+            break;
+        case (level >= 15):
+            delayTime = 450;
+            break;
+        case (level >= 10):
+            delayTime = 500;
+            break;
+        case (level >= 5):
+            delayTime = 600;
+            break;
+        default:
+            delayTime = 700;
+    }
+    console.log("Delay Time: " +delayTime);
+}
+~~~~
+
+When levels go up the Title changes color. It applies new classes and remove the
+old ones. If the game is restarted, the default kicks in which will not only
+reset the delayTime but will also remove any color classes applied to the title.
+~~~~javascript
+function checkLevelSpeed() {
+    switch (true) {
+        case (level >= 30):
+            delayTime = 350;
+            break;
+        case (level >= 20):
+            delayTime = 400;
+            $(".title").addClass("titleColor4").removeClass("titleColor3");
+            break;
+        case (level >= 15):
+            delayTime = 450;
+            $(".title").addClass("titleColor3").removeClass("titleColor2");
+            break;
+        case (level >= 10):
+            delayTime = 500;
+            $(".title").addClass("titleColor2").removeClass("titleColor1");
+            break;
+        case (level >= 5):
+            delayTime = 600;
+            $(".title").addClass("titleColor1");
+            break;
+        default:
+            delayTime = 700;
+            $(".title").removeClass("titleColor1").removeClass("titleColor2").removeClass("titleColor3");
+    }
+    console.log("Delay Time: " +delayTime);
+}
+~~~~

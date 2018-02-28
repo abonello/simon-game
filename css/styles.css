@@ -101,9 +101,30 @@ p {
     font-family: "Squada One", Arial;
     font-size: 55px;
     letter-spacing: 3px;
+    color: black;
     margin-top: 25px;
     margin-bottom: 5px;
     text-shadow: 0 0 5px #5e5454;
+}
+
+.titleColor1 {
+    color : #4c3939;
+}
+
+.titleColor2 {
+    color : #774c4c;
+}
+
+.titleColor3 {
+    color : #c34e4e;
+}
+
+.titleColor4 {
+    color : #fd2c2c;
+}
+
+.titleColor5 {
+    color : #ff6507;
 }
 
 .inline {
