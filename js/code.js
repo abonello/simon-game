@@ -11,8 +11,8 @@ var soundSet1 = [
     "assets/A2.mp3"
     ]
 $(document).ready(function() {
-    $(".soundSet").text(whichSound);
     $(".start").click(function(){
+        $(".soundSet").text(whichSound);
         level++;
         doGameList();
     });
