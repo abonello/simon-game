@@ -3,7 +3,9 @@ var userList = [];
 var padId = 0, color, level = 0;
 var delayTime = 700; // ms to wait before switching back to normal pad color.
 var whichSound = 1;
-var maxSound = 3;
+var maxSound = 2;
+// var playSet = "soundSet1";
+var playThisSound = "";
 var soundSet1 = [
     "assets/set1/A1.mp3",
     "assets/set1/C1.mp3",
@@ -18,24 +20,28 @@ var soundSet2 = [
     ]
     
 $(document).ready(function() {
-    $(".start").click(function(){
+    $(".start").click(function() {
         $(".soundSet").text(whichSound);
         level++;
         doGameList();
     });
     
     // User List input
-    $(".pad").click(function(){
+    $(".pad").click(function() {
         var id = $(this).attr("id").slice(3,4);
         userList.push(id);
         userAction(id);
     });
     
     //User select set of sound
-    $(".btn").click(function(){
-        console.log("A button was pressed.");
+    $(".btn").click(function() {
         checkWhichButton(this);
         $(".soundSet").text(whichSound);
+    });
+    
+    // End Button
+    $(".end").click(function() {
+        errorDisplay();
     });
 });
 
@@ -143,8 +149,19 @@ function padAction(ndx, padId, color) {
 }
 
 function playSound(padId) {
+    
+    // play correct set of sounds
+    switch (whichSound) {
+        case 1:
+            playThisSound = soundSet1[padId];
+            break;
+        case 2:
+            playThisSound = soundSet2[padId];
+            break;
+    }
+
     // $.playSound(soundSet1[padId]);
-    var sound = new Audio(soundSet1[padId]);
+    var sound = new Audio(playThisSound);
     sound.play();
 }
 
