@@ -221,7 +221,7 @@ stored in the gameList array.
 
 I had a few issues with refactoring but now it is working.
 
-#Sounds
+## Sounds
 I added four temporary sounds and got them to play with their respective pad.
 ~~~~javascript
 var soundSet = [
@@ -288,7 +288,7 @@ I can use plain HTML but it does not seem to work either. I will revert
 to markdown.  
 I wrote an instruction to right-click.
 
-###Compare computer and user list.
+### Compare computer and user list.
 The following code is for testing. It uses console logs to track conditions.
 ~~~~javascript
 function userAction(id, color) {
