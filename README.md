@@ -448,7 +448,7 @@ function checkLevelSpeed() {
 Next is to add another set of sounds and a way to select which of the sets to use.
 Second set of sounds uploaded and implemented.
 
-###Next implement the End Button
+### Next implement the End Button
 The use of the end button is to abort a game. It will take you straight to the 
 end of the game and play the Error function. This button is not strictly necessary
 for the game because the user can easily just play a wrong pad but I wanted to 
